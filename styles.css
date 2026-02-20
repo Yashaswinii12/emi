@@ -10,7 +10,7 @@ body {
   color: #333;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
   background: #2c3e50;
   padding: 15px 40px;
@@ -36,16 +36,11 @@ header ul li a {
   text-decoration: none;
 }
 
-/* LAYOUT */
+/* ================= LAYOUT ================= */
 .container {
   max-width: 1100px;
   margin: 40px auto;
   padding: 20px;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 .calculator-wrapper {
@@ -61,7 +56,7 @@ h1 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* INPUTS */
+/* ================= INPUTS ================= */
 .input-group {
   margin-bottom: 25px;
 }
@@ -73,12 +68,12 @@ h1 {
   font-weight: bold;
 }
 
-input[type="number"], select {
+input[type="number"] {
   width: 120px;
   padding: 6px;
 }
 
-/* SLIDER */
+/* ================= SLIDER ================= */
 input[type="range"] {
   -webkit-appearance: none;
   width: 100%;
@@ -97,7 +92,7 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: -5px;
 }
 
-/* RESULTS */
+/* ================= RESULTS ================= */
 .results {
   border-top: 1px solid #ddd;
   padding-top: 15px;
@@ -110,23 +105,7 @@ input[type="range"]::-webkit-slider-thumb {
   font-weight: bold;
 }
 
-/* BUTTONS */
-button {
-  padding: 10px 25px;
-  border: none;
-  background: #3498db;
-  color: white;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-button:hover {
-  background: #2980b9;
-}
-
-/* DONUT CHART */
+/* ================= DONUT CHART ================= */
 .chart-box {
   display: flex;
   justify-content: center;
@@ -140,7 +119,6 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .donut-chart::before {
@@ -156,31 +134,8 @@ button:hover {
   position: relative;
   font-weight: bold;
 }
-.chart-legend {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  font-weight: bold;
-}
 
-.legend {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  margin-right: 6px;
-  border-radius: 3px;
-}
-
-.legend.principal {
-  background-color: #3498db;
-}
-
-.legend.interest {
-  background-color: #e74c3c;
-}
-
-/* HISTORY */
+/* ================= HISTORY ================= */
 #history {
   margin: 50px auto;
   max-width: 900px;
@@ -198,16 +153,21 @@ button:hover {
 #history th, #history td {
   border: 1px solid #ddd;
   padding: 10px;
-  text-align: center;
 }
 
-/* SAVE BUTTON */
+/* ================= BUTTON ================= */
 #save {
   display: block;
   margin: 20px auto;
+  padding: 10px 25px;
+  border: none;
+  background: #3498db;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* RESPONSIVE */
 @media(max-width:900px){
   .calculator-wrapper {
     grid-template-columns: 1fr;
