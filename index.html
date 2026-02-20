@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EMI Calculator - DevVerse</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">DevVerse</div>
+  <ul>
+    <li><a href="#emicalculator">Calculator</a></li>
+    <li><a href="#history">History</a></li>
+  </ul>
+</header>
+
+<section id="emicalculator">
+<div class="container">
+<h1>EMI Calculator</h1>
+
+<div class="calculator-wrapper">
+
+<!-- LEFT -->
+<div class="calculator-section">
+
+<div class="input-group">
+  <div class="input-label">
+    <label>Loan Amount</label>
+    <input type="number" id="loanAmountDisplay" value="500000">
+  </div>
+  <input type="range" id="loanAmount" min="50000" max="5000000" step="10000" value="500000">
+</div>
+
+<div class="input-group">
+  <div class="input-label">
+    <label>Interest Rate (%)</label>
+    <input type="number" id="interestRateDisplay" value="8" step="0.1">
+  </div>
+  <input type="range" id="interestRate" min="1" max="20" step="0.1" value="8">
+</div>
+
+<div class="input-group">
+  <div class="input-label">
+    <label>Payment Term (Months)</label>
+    <select id="tenureDisplay"></select>
+  </div>
+  <input type="range" id="tenure" min="6" max="60" step="1" value="12">
+</div>
+
+<div class="input-group">
+  <label>Monthly Income</label>
+  <input type="number" id="income" placeholder="Enter your income">
+</div>
+
+<div class="input-group">
+  <label>Loan Type</label>
+  <select id="loanType">
+    <option>Personal Loan</option>
+    <option>Home Loan</option>
+    <option>Education Loan</option>
+    <option>Car Loan</option>
+  </select>
+</div>
+
+<button id="calculateBtn">Calculate</button>
+
+<div class="results">
+  <div class="result-row">Monthly EMI: ₹ <input type="text" id="monthlyEMI" readonly></div>
+  <div class="result-row">Loan Category: <span id="loanCategory"></span></div>
+  <div class="result-row">Principal: ₹<span id="principalAmount"></span></div>
+  <div class="result-row">Total Interest: ₹<span id="totalInterest"></span></div>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="calculator-section">
+  <div class="chart-box">
+  <div id="emiChart" class="donut-chart">
+    <div id="chartCenter" class="chart-center"></div>
+  </div>
+</div>
+
+<!-- Legend -->
+<div class="chart-legend">
+  <div><span class="legend principal"></span> Principal Amount</div>
+  <div><span class="legend interest"></span> Interest Amount</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<button id="save">Save</button>
+
+<section id="history">
+<h2>History</h2>
+<table>
+<thead>
+<tr>
+<th>Loan</th>
+<th>Rate</th>
+<th>Months</th>
+<th>Income</th>
+<th>Loan Type</th>
+<th>EMI</th>
+<th>Category</th>
+</tr>
+</thead>
+<tbody id="historyBody"></tbody>
+</table>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
