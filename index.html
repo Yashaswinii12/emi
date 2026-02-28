@@ -11,18 +11,19 @@
 <header>
   <div class="logo">DevVerse</div>
   <ul>
-    <li><a href="#emicalculator">Calculator</a></li>
-    <li><a href="#history">History</a></li>
+    <li><a href="#" id="tabCalculator" class="active">Calculator</a></li>
+    <li><a href="#" id="tabHistory">History</a></li>
+     <li><a href="#" id="tabAbout">About</a></li>
   </ul>
 </header>
 
-<section id="emicalculator">
+<!-- CALCULATOR -->
+<section id="emicalculator" class="tab-section active">
 <div class="container">
 <h1>EMI Calculator</h1>
 
 <div class="calculator-wrapper">
 
-<!-- LEFT -->
 <div class="calculator-section">
 
 <div class="input-group">
@@ -51,7 +52,7 @@
 
 <div class="input-group">
   <label>Monthly Income</label>
-  <input type="number" id="income" placeholder="Enter your income">
+  <input type="number" id="income" placeholder="Enter Your income">
 </div>
 
 <div class="input-group">
@@ -75,29 +76,73 @@
 
 </div>
 
-<!-- RIGHT -->
 <div class="calculator-section">
   <div class="chart-box">
-  <div id="emiChart" class="donut-chart">
-    <div id="chartCenter" class="chart-center"></div>
+    <div id="emiChart" class="donut-chart">
+      <div id="chartCenter" class="chart-center"></div>
+    </div>
+  </div>
+
+  <div class="chart-legend">
+    <div><span class="legend principal"></span> Principal Amount</div>
+    <div><span class="legend interest"></span> Interest Amount</div>
   </div>
 </div>
 
-<!-- Legend -->
-<div class="chart-legend">
-  <div><span class="legend principal"></span> Principal Amount</div>
-  <div><span class="legend interest"></span> Interest Amount</div>
-</div>
 </div>
 
-</div>
+<button id="save">Save</button>
 </div>
 </section>
 
-<button id="save">Save</button>
+<!-- ABOUT -->
+<section id="about" class="tab-section">
+<div class="container about-box">
 
-<section id="history">
+<h2>About EMI Calculator</h2>
+
+<p class="about-intro">
+This EMI Calculator helps users estimate their monthly loan repayment amount based on loan amount, interest rate, and tenure.
+</p>
+
+<div class="about-card">
+<h3>EMI Formula</h3>
+<p><b>EMI = [P × R × (1+R)<sup>N</sup>] / [(1+R)<sup>N</sup> − 1]</b></p>
+<ul>
+  <li>P = Loan Amount (Principal)</li>
+  <li>R = Monthly Interest Rate (Annual Rate ÷ 12 ÷ 100)</li>
+  <li>N = Tenure in Months</li>
+</ul>
+</div>
+
+<div class="about-card">
+<h3>Types of Loans</h3>
+<ul>
+  <li>Personal Loan</li>
+  <li>Home Loan</li>
+  <li>Education Loan</li>
+  <li>Car Loan</li>
+</ul>
+</div>
+
+<div class="about-card">
+<h3>Loan Risk Category</h3>
+<p>Based on EMI as a percentage of Monthly Income:</p>
+<ul>
+  <li><b>Safe Loan:</b> EMI ≤ 30%</li>
+  <li><b>Moderate Loan:</b> EMI 30% – 50%</li>
+  <li><b>Risky Loan:</b> EMI &gt; 50%</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<!-- HISTORY -->
+<section id="history" class="tab-section">
 <h2>History</h2>
+<button id="clearHistory">Clear History</button>
+
 <table>
 <thead>
 <tr>
@@ -108,6 +153,7 @@
 <th>Loan Type</th>
 <th>EMI</th>
 <th>Category</th>
+<th>Action</th>
 </tr>
 </thead>
 <tbody id="historyBody"></tbody>

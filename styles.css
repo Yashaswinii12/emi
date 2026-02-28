@@ -1,3 +1,4 @@
+/* YOUR SAME CSS (UNCHANGED) */
 * {
   margin: 0;
   padding: 0;
@@ -74,8 +75,20 @@ h1 {
 }
 
 input[type="number"], select {
+  border: none;
+  color: #2980b9;
   width: 120px;
-  padding: 6px;
+  font-weight: 500;
+  font-size: 100%;
+  padding-left: 46px;
+}
+
+input[type="text"]{
+  border: none;
+  color: #2980b9;
+  font-size: large;
+  width: 120px;
+  padding-left: 49px;
 }
 
 /* SLIDER */
@@ -156,14 +169,15 @@ button:hover {
   position: relative;
   font-weight: bold;
 }
+
 .chart-legend {
   margin-top: 15px;
   display: flex;
-  justify-content: center;
-  gap: 25px;
+  flex-direction: column;   /* makes items stack vertically */
+  align-items: center;      /* keeps them centered under chart */
+  gap: 10px;
   font-weight: bold;
 }
-
 .legend {
   display: inline-block;
   width: 14px;
@@ -179,7 +193,50 @@ button:hover {
 .legend.interest {
   background-color: #e74c3c;
 }
+/* existing CSS unchanged above */
 
+/* ABOUT SECTION STYLING */
+.about-box {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.about-intro {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.about-card {
+  background: #f8f9fb;
+  padding: 20px;
+  border-left: 5px solid #3498db;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.about-card h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.about-card ul {
+  margin-left: 20px;
+}
+
+.about-card li {
+  margin: 6px 0;
+  color: #333;
+}
 /* HISTORY */
 #history {
   margin: 50px auto;
@@ -201,15 +258,31 @@ button:hover {
   text-align: center;
 }
 
-/* SAVE BUTTON */
-#save {
-  display: block;
-  margin: 20px auto;
-}
-
 /* RESPONSIVE */
 @media(max-width:900px){
   .calculator-wrapper {
     grid-template-columns: 1fr;
   }
+}
+
+#income, #loanType {
+  width: 300px !important;
+  padding-left: 46px !important;
+}
+
+/* TAB SYSTEM */
+.tab-section { display: none; }
+.tab-section.active { display: block; }
+
+header ul li a.active {
+  border-bottom: 2px solid white;
+}
+
+#clearHistory {
+  background: #e74c3c;
+}
+
+.delete-btn {
+  background: #e67e22;
+  padding: 5px 10px;
 }
